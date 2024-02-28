@@ -68,7 +68,7 @@ const useStyles = createStyles((theme, params: { position?: TextUiPosition }) =>
   contentContainer: {
     fontFamily: 'Roboto',
     borderRadius: 5,
-    backgroundColor: 'rgba(109, 109, 109, 0.397)',
+    background: 'linear-gradient(90deg, rgba(38, 94, 86, 0.984) 0%, rgba(31, 79, 72, 1) 100%, rgba(181,181,181,1) 66%, rgba(255,255,255,0) 100%)',
     padding: '5%',
     color: 'white',
     border: '1px solid rgb(128, 128, 128)',
@@ -118,11 +118,11 @@ const TextUI: React.FC = () => {
                 <Box className={classes.shape}></Box>
                 <Box className={classes.shape2}></Box>
             </Group>
-            <Group spacing={12} className={classes.contentContainer}>
+            <Box className={classes.contentContainer}>
               <ReactMarkdown components={MarkdownComponents} remarkPlugins={[remarkGfm]}>
                 {data.text}
               </ReactMarkdown>
-            </Group>
+            </Box>
           </Box>
         </ScaleFade>
       </Box>

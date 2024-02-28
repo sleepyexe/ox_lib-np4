@@ -1,7 +1,7 @@
 import { useNuiEvent } from '../../hooks/useNuiEvent';
 import { toast, Toaster } from 'react-hot-toast';
 import ReactMarkdown from 'react-markdown';
-import { Avatar, Box, createStyles, Group, keyframes, Stack, Text } from '@mantine/core';
+import { Avatar, Box, createStyles, Group, keyframes, Stack, Text, RingProgress } from '@mantine/core';
 import React from 'react';
 import type { NotificationProps } from '../../typings';
 import MarkdownComponents from '../../config/MarkdownComponents';
@@ -9,12 +9,12 @@ import LibIcon from '../../components/LibIcon';
 
 const useStyles = createStyles((theme) => ({
   container: {
-    width: 300,
+    width: 350,
     height: 'fit-content',
     backgroundColor: theme.colors.dark[6],
     color: theme.colors.dark[0],
     padding: 12,
-    borderRadius: theme.radius.sm,
+    borderRadius: theme.radius.md,
     fontFamily: 'Roboto',
     boxShadow: theme.shadows.sm,
   },
@@ -105,6 +105,8 @@ const exitAnimationBottom = keyframes({
 
 const Notifications: React.FC = () => {
   const { classes } = useStyles();
+
+  const [value, setValue] = React.useState(0);
 
   useNuiEvent<NotificationProps>('notify', (data) => {
     if (!data.title && !data.description) return;
@@ -201,6 +203,7 @@ const Notifications: React.FC = () => {
               )}
             </Stack>
           </Group>
+
         </Box>
       ),
       {

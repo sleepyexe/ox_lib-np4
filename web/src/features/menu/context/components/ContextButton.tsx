@@ -146,7 +146,7 @@ const ContextButton: React.FC<{
                   </Text>
                 )}
                 {button.progress !== undefined && (
-                  <Progress value={button.progress} size="sm" color={button.colorScheme || 'dark.3'} />
+                  <Progress value={button.progress} size="sm" color={button.colorScheme || 'dark.2'} />
                 )}
               </Stack>
               {(button.menu || button.arrow) && button.arrow !== false && (
