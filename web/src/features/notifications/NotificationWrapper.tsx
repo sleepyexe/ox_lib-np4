@@ -106,8 +106,6 @@ const exitAnimationBottom = keyframes({
 const Notifications: React.FC = () => {
   const { classes } = useStyles();
 
-  const [value, setValue] = React.useState(0);
-
   useNuiEvent<NotificationProps>('notify', (data) => {
     if (!data.title && !data.description) return;
     // Backwards compat with old notifications
@@ -203,7 +201,6 @@ const Notifications: React.FC = () => {
               )}
             </Stack>
           </Group>
-
         </Box>
       ),
       {

@@ -55,6 +55,7 @@ const Progressbar: React.FC = () => {
   useNuiEvent<ProgressbarProps>('progress', (data) => {
     if (visible) return;
     setVisible(true);
+    setValue(0);
     setLabel(data.label);
     setDuration(data.duration);
     const onePercent = data.duration * 0.01;
